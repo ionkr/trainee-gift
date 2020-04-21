@@ -24,13 +24,29 @@
 ```
 #### 
 
+#### Setup .env
+```
+theCamp=true
+
+// 계정 정보
+userId=<YOUR THECAMP EMAIL HERE>
+userPw=<YOUR THECAMP PASSWORD HERE>
+
+// 군인 정보
+name=ㅁㅁㅁ
+birth=19980313
+enterDate=20200413
+type=육군
+camp=36사단
+```
+
 #### Usage
 ```
 export ROLE='<ROLES>';
 babel-node app.js 
 ```
-
-Example  
+    
+#### Example  
 ```
 export ROLE='/melon/MelonTop100, /news/DaumEnt'
 babel-node app.js
