@@ -32,7 +32,6 @@ class RandomLyrics extends require('./../NotifyObject') {
             $ = await request.load(detailRes.data);
 
             const container = $('body > div[class="fixed_body"] > article[class="song_lyric"] > div[class="container"]')
-
             const heading = $(container).find('div[class="heading"] > h1').text().trim().split('-').map(e => e.trim()).join(' - ')
 
             let lyrics = '';

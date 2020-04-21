@@ -71,6 +71,7 @@ class Nonsan {
         }, this).flat().filter(i=> typeof i !== 'undefined')
 
         return Promise.all(wrapped.map(e => {
+            logger.info('[NONSAN] 메시지 보내는 중... ' + e.sympathyLetterSubject)
             return this.client.sendMessage(this.soldier, e)
         }, this))
     }
