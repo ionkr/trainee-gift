@@ -49,6 +49,7 @@ babel-node app.js
 #### Example  
 ```
 export ROLE='/melon/MelonTop100, /news/DaumEnt'
+export RUNNING_HOURS='10, 16' // 10시 nn분, 16시 nn분에 편지를 보냅니다.
 babel-node app.js
 
 // result
