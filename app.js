@@ -1,7 +1,9 @@
 global.logger = require('./src/utils/logger');
 global.request = require('./src/utils/RequestPlugin');
 
-process.env.ROLE = '/melon/MelonTop100, /melon/RandomLyrics, /news/Coinness';
+if (!process.env.ROLE) {
+    process.env.ROLE = '/melon/MelonTop100, /melon/RandomLyrics, /news/Coinness';
+}
 
 let roles = []
 

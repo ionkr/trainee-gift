@@ -8,7 +8,7 @@ let newsMap = {
         xml: 'http://media.daum.net/rss/today/primary/entertain/rss2.xml'
     },
     DaumSports: {
-        name: '다음뉴스 스포',
+        name: '다음뉴스 스포츠',
         xml: 'http://media.daum.net/rss/today/primary/sports/rss2.xml'
     },
     Coinness: {
