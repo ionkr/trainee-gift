@@ -1,15 +1,17 @@
-// configure parameters
-// http://emart.ssg.com/item/itemView.ssg?itemId=1000035476219&ckwhere=linkprice
-// process.argv.forEach((val, idx, arr) => {
-//     global.charLimit = val;
-// })
-
 global.logger = require('./src/utils/logger');
 global.request = require('./src/utils/RequestPlugin');
 
-process.env.ROLE = '/melon/MelonTop100, /melon/RandomLyrics';
+process.env.ROLE = '/melon/MelonTop100, /melon/RandomLyrics, /news/Coinness';
 
 let roles = []
+
+const parseRole = (role) => {
+    if (role.startsWith('/news')) {
+        return ['/news', role.split('/news/')[1]]
+    }
+
+    return [role, false]
+}
 
 const sleep = (ms) => {
     return new Promise(resolve => {
@@ -23,15 +25,13 @@ import Nonsan from './src/nonsan'
     logger.info('[APP] 서비스 시작')
 
     for (let role of (process.env.ROLE || '').split(',')) {
-        role = role.trim();
+        role = parseRole(role.trim());
 
-        roles.push(require('./src/models' + role))
+        const obj = require('./src/models' + role[0])
+        roles.push(role[1] ? obj[role[1]] : obj)
     }
 
-    let messages = []
-    for (const role of roles) {
-        messages.push(await role.split(global.charLimit || 1500))
-    }
+    let messages = await Promise.all(roles.map(role => role.split(global.charLimit || 1500)))
 
     try {
         await Nonsan.welcome()
