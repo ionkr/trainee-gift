@@ -17,6 +17,8 @@ const sleep = (ms) => {
     })
 }
 
+import Nonsan from './src/nonsan'
+
 (async () => {
     logger.info('[APP] 서비스 시작')
 
@@ -26,8 +28,16 @@ const sleep = (ms) => {
         roles.push(require('./src/models' + role))
     }
 
+    let messages = []
     for (const role of roles) {
-        console.log(await role.split(global.charLimit || 1500))
+        messages.push(await role.split(global.charLimit || 1500))
+    }
+
+    try {
+        await Nonsan.welcome()
+        await Nonsan.send(messages)
+    } catch (e) {
+       logger.error(e)
     }
 })();
 
