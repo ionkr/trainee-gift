@@ -8,7 +8,7 @@
 * 멜론  
     * 실시간 차트 TOP 100
       - /melon/MelonTop100
-    * *(실시간 차트 TOP 100)* 중 랜덤 1곡의 가사
+    * 실시간 차트 TOP 100 중 랜덤 1곡의 가사
       - /melon/RandomLyrics
     
 * 다음 뉴스
