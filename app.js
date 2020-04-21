@@ -1,4 +1,7 @@
 import moment from 'moment'
+require('moment-timezone')
+
+moment.tz.setDefault('Asia/Seoul')
 
 global.logger = require('./src/utils/logger');
 global.request = require('./src/utils/RequestPlugin');
