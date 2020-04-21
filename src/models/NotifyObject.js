@@ -31,7 +31,7 @@ class NotifyObject {
     }
 
     async fetch() {
-        logger.info(`[${this.name}] fetching new data...`)
+        logger.info(`[${this.name}] 새로운 데이터 가져오는 중 ...`)
     }
 
     logError(err) {
