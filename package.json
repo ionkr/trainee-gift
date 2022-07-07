@@ -15,7 +15,7 @@
     "babel-preset-env": "^1.7.0",
     "cheerio": "^1.0.0-rc.3",
     "dotenv": "^8.2.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.28",
     "rss-parser": "^3.7.6",
     "telegram-bot-api": "^1.3.3",
